@@ -2,19 +2,19 @@ import 'package:bloc_analytics/bloc_analytics.dart';
 
 class ExampleTracker implements Tracker {
   void logEvent(AnalyticsEvent event) {
-    print(event);
+    print('logEvent: $event');
   }
 
   void logPageView(String name) {
-    print(name);
+    print('logPageView: $name');
   }
 
   void setUserProperty(String key, Object any) {
-    print(key);
+    print('setUserProperty: $key');
   }
 
   void setUserId(String id) {
-    print(id);
+    print('setUserId: $id');
   }
 }
 

@@ -7,19 +7,47 @@ class MultipleTracker implements Tracker {
 
   final Iterable<Tracker> trackers;
 
+  @override
   void logPageView(String name) {
-    trackers.forEach((t) => t.logPageView(name));
+    try {
+      for (final tracker in trackers) {
+        tracker.logPageView(name);
+      }
+    } on Exception {
+      //
+    }
   }
 
+  @override
   void logEvent(AnalyticsEvent event) {
-    trackers.forEach((t) => t.logEvent(event));
+    try {
+      for (final tracker in trackers) {
+        tracker.logEvent(event);
+      }
+    } on Exception {
+      //
+    }
   }
 
+  @override
   void setUserProperty(String key, Object any) {
-    trackers.forEach((t) => t.setUserProperty(key, any));
+    try {
+      for (final tracker in trackers) {
+        tracker.setUserProperty(key, any);
+      }
+    } on Exception {
+      //
+    }
   }
 
+  @override
   void setUserId(String id) {
-    trackers.forEach((t) => t.setUserId(id));
+    try {
+      for (final tracker in trackers) {
+        tracker.setUserId(id);
+      }
+    } on Exception {
+      //
+    }
   }
 }

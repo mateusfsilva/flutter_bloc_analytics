@@ -1,16 +1,14 @@
 name: bloc_analytics
 description: Easy integrate you app with multiple analytics tracker, integrate with Firebase Analytics, Crashlytics and others
-version: 0.5.0
+version: 0.6.0
 author: guitcastro <guilherme.torres.castro@gmail.com>
 homepage: https://github.com/guitcastro/dayrl_tracker
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  meta: ^1.1.8
 
 dev_dependencies:
-  test: ">=1.10.0 <2.0.0"
-  test_coverage: ^0.4.0
-  mockito: ^4.1.1
+  lint: ^1.5.3
+  mocktail: ^0.1.4
