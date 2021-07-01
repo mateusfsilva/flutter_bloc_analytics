@@ -7,10 +7,13 @@ class FirebaseTracker implements Tracker {
 
   final FirebaseAnalytics analytics;
 
+  @override
   void logEvent(AnalyticsEvent event) {
     final sanitizedParameters = event.parameters == null
         ? null
-        : event.parameters.map((key, value) => MapEntry(_sanitize(key), value));
+        : event.parameters!.map(
+            (key, value) => MapEntry(_sanitize(key), value),
+          );
 
     analytics.logEvent(
       name: _sanitize(event.eventName),
@@ -18,12 +21,14 @@ class FirebaseTracker implements Tracker {
     );
   }
 
+  @override
   void logPageView(String name) {
     analytics.setCurrentScreen(
       screenName: _sanitize(name),
     );
   }
 
+  @override
   void setUserProperty(String key, Object value) {
     analytics.setUserProperty(
       name: _sanitize(key),
@@ -31,14 +36,15 @@ class FirebaseTracker implements Tracker {
     );
   }
 
+  @override
   void setUserId(String id) {
     analytics.setUserId(id);
   }
 
   String _sanitize(final Object value) {
-    return ('' + value)
-        .replaceAll("/", "_")
-        .replaceAll("-", "_")
-        .replaceAll(" ", "_");
+    return '$value'
+        .replaceAll('/', '_')
+        .replaceAll('-', '_')
+        .replaceAll(' ', '_');
   }
 }

@@ -28,7 +28,7 @@ void main() {
     ],
   );
 
-  tracker.setUserId("97e7d993-745a-455f-aeac-0d04d5f0a035");
+  tracker.setUserId('97e7d993-745a-455f-aeac-0d04d5f0a035');
 
   tracker.logEvent(
     AnalyticsEvent(eventName: 'test', parameters: {'propertyName': 'value'}),
