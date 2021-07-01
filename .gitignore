@@ -18,3 +18,5 @@ packages/firebase_bloc_analytics/example/android/local.properties
 packages/firebase_bloc_analytics/example/ios/Runner/GeneratedPluginRegistrant.h
 
 packages/firebase_bloc_analytics/example/ios/Runner/GeneratedPluginRegistrant.m
+
+packages/firebase_bloc_analytics/example/ios/Flutter/flutter_export_environment.sh
